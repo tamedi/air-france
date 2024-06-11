@@ -1,0 +1,147 @@
+2024-06-11 08:36:00.688 ERROR 17012 --- [http-nio-8080-exec-4] c.e.u.exception.GlobalExceptionHandler   : Erreur de validation des champs : {country=Only users from France can register, age=Age should be greater than or equal to 18}
+2024-06-11 08:36:00.722  WARN 17012 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.example.userregistration.model.User> com.example.userregistration.controller.UserController.createUser(com.example.userregistration.model.User) with 2 errors: [Field error in object 'user' on field 'age': rejected value [17]; codes [Min.user.age,Min.age,Min.java.lang.Integer,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.age,age]; arguments []; default message [age],18]; default message [Age should be greater than or equal to 18]] [Field error in object 'user' on field 'country': rejected value [franc]; codes [Pattern.user.country,Pattern.country,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.country,country]; arguments []; default message [country],[Ljavax.validation.constraints.Pattern$Flag;@2dd6bb04,(?i)France]; default message [Only users from France can register]] ]
+2024-06-11 08:36:18.084 ERROR 17012 --- [http-nio-8080-exec-6] c.e.u.exception.GlobalExceptionHandler   : Erreur de validation des champs : {country=Only users from France can register}
+2024-06-11 08:36:18.088  WARN 17012 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.example.userregistration.model.User> com.example.userregistration.controller.UserController.createUser(com.example.userregistration.model.User): [Field error in object 'user' on field 'country': rejected value [franc]; codes [Pattern.user.country,Pattern.country,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.country,country]; arguments []; default message [country],[Ljavax.validation.constraints.Pattern$Flag;@2dd6bb04,(?i)France]; default message [Only users from France can register]] ]
+2024-06-11 08:37:42.210  INFO 17012 --- [http-nio-8080-exec-9] c.e.u.service.UserService                : Found users with status ACTIVE: [User(id=6666faa0fe3b5c73e63996da, name=ACTIVE3, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=6666faaefe3b5c73e63996db, name=ACTIVE2, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=6666fd6755680d7e7219d14b, name=ACTIVE4, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=666704b086961f3fdb5ffa55, name=ACTIVE5, age=19, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=666706cbee434d28314a9076, name=ACTIVE6, age=19, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=66672312ae1aac153edd79dd, name=ACTIVE7, age=19, country=france, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE)]
+2024-06-11 08:37:42.211  INFO 17012 --- [http-nio-8080-exec-9] c.e.u.service.UserService                : Processing time for getUsersByStatus: 198 ms
+2024-06-11 08:38:19.811  INFO 17012 --- [http-nio-8080-exec-10] c.e.u.service.UserService                : Found users with status INACTIVE: [User(id=6666fa8dfe3b5c73e63996d9, name=INACTIVE, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=INACTIVE)]
+2024-06-11 08:38:19.812  INFO 17012 --- [http-nio-8080-exec-10] c.e.u.service.UserService                : Processing time for getUsersByStatus: 4 ms
+2024-06-11 08:38:35.296  WARN 17012 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.example.userregistration.enums.Status'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam com.example.userregistration.enums.Status] for value 'xxxx'; nested exception is java.lang.IllegalArgumentException: No enum constant com.example.userregistration.enums.Status.xxxx]
+2024-06-11 08:38:53.763  INFO 17012 --- [http-nio-8080-exec-3] c.e.u.service.UserService                : Found users with status ACTIVE: [User(id=6666faa0fe3b5c73e63996da, name=ACTIVE3, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=6666faaefe3b5c73e63996db, name=ACTIVE2, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=6666fd6755680d7e7219d14b, name=ACTIVE4, age=27, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=666704b086961f3fdb5ffa55, name=ACTIVE5, age=19, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=666706cbee434d28314a9076, name=ACTIVE6, age=19, country=France, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE), User(id=66672312ae1aac153edd79dd, name=ACTIVE7, age=19, country=france, email=assia@gmail.com, phoneNumber=06070874, status=ACTIVE)]
+2024-06-11 08:38:53.765  INFO 17012 --- [http-nio-8080-exec-3] c.e.u.service.UserService                : Processing time for getUsersByStatus: 4 ms
+2024-06-11 08:40:40.551  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Starting UserRegistrationApplication using Java 17.0.1 on LFR051660 with PID 17012 (C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration\target\classes started by mtamedi in C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration)
+2024-06-11 08:40:40.551  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-06-11 08:40:40.908  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-06-11 08:40:40.977 ERROR 17012 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.NoClassDefFoundError: com/example/userregistration/enums/Status
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.privateGetPublicMethods(Class.java:3427) ~[na:na]
+	at java.base/java.lang.Class.getMethods(Class.java:2019) ~[na:na]
+	at org.springframework.data.repository.util.ReactiveWrappers.usesReactiveType(ReactiveWrappers.java:181) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.isReactiveRepository(AbstractRepositoryMetadata.java:160) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.mongodb.repository.config.MongoRepositoryConfigurationExtension.useRepositoryConfiguration(MongoRepositoryConfigurationExtension.java:121) ~[spring-data-mongodb-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:108) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.19.jar:5.3.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.example.userregistration.UserRegistrationApplication.main(UserRegistrationApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+Caused by: java.lang.ClassNotFoundException: com.example.userregistration.enums.Status
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 33 common frames omitted
+
+2024-06-11 08:40:43.475  INFO 17012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-11 08:40:43.476  INFO 17012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-11 08:40:43.482  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Starting UserRegistrationApplication using Java 17.0.1 on LFR051660 with PID 17012 (C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration\target\classes started by mtamedi in C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration)
+2024-06-11 08:40:43.483  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-06-11 08:40:43.737  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-06-11 08:40:43.757  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 MongoDB repository interfaces.
+2024-06-11 08:40:43.915  INFO 17012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-11 08:40:43.921  INFO 17012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-11 08:40:43.923  INFO 17012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2024-06-11 08:40:43.982  INFO 17012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-11 08:40:43.983  INFO 17012 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 495 ms
+2024-06-11 08:40:44.057  INFO 17012 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2024-06-11 08:40:44.070  INFO 17012 --- [cluster-ClusterId{value='6667f16cae1aac153edd79de', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:83}] to localhost:27017
+2024-06-11 08:40:44.070  INFO 17012 --- [cluster-ClusterId{value='6667f16cae1aac153edd79de', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5202800}
+2024-06-11 08:40:44.073  INFO 17012 --- [cluster-rtt-ClusterId{value='6667f16cae1aac153edd79de', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:84}] to localhost:27017
+2024-06-11 08:40:44.156  INFO 17012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-11 08:40:44.368  INFO 17012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-11 08:40:44.373  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Started UserRegistrationApplication in 0.92 seconds (JVM running for 52845.274)
+2024-06-11 08:40:44.375  INFO 17012 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-06-11 09:57:00.474  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Starting UserRegistrationApplication using Java 17.0.1 on LFR051660 with PID 17012 (C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration\target\classes started by mtamedi in C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration)
+2024-06-11 09:57:00.474  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-06-11 09:57:00.688  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-06-11 09:57:00.701 ERROR 17012 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.NoClassDefFoundError: com/example/userregistration/enums/Status
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.privateGetPublicMethods(Class.java:3427) ~[na:na]
+	at java.base/java.lang.Class.getMethods(Class.java:2019) ~[na:na]
+	at org.springframework.data.repository.util.ReactiveWrappers.usesReactiveType(ReactiveWrappers.java:181) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.isReactiveRepository(AbstractRepositoryMetadata.java:160) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.mongodb.repository.config.MongoRepositoryConfigurationExtension.useRepositoryConfiguration(MongoRepositoryConfigurationExtension.java:121) ~[spring-data-mongodb-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:108) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:159) ~[spring-data-commons-2.6.4.jar:2.6.4]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-2.6.7.jar:2.6.7]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-5.3.19.jar:5.3.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:395) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:157) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.19.jar:5.3.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.7.jar:2.6.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.7.jar:2.6.7]
+	at com.example.userregistration.UserRegistrationApplication.main(UserRegistrationApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+Caused by: java.lang.ClassNotFoundException: com.example.userregistration.enums.Status
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 33 common frames omitted
+
+2024-06-11 09:57:04.212  INFO 17012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-11 09:57:04.213  INFO 17012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-11 09:57:04.219  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Starting UserRegistrationApplication using Java 17.0.1 on LFR051660 with PID 17012 (C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration\target\classes started by mtamedi in C:\Users\mtamedi\IdeaProjects\capgemini_sophia\tp perso\user-registration)
+2024-06-11 09:57:04.219  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-06-11 09:57:04.416  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2024-06-11 09:57:04.429  INFO 17012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 1 MongoDB repository interfaces.
+2024-06-11 09:57:04.507  INFO 17012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-11 09:57:04.508  INFO 17012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-11 09:57:04.508  INFO 17012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2024-06-11 09:57:04.535  INFO 17012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-11 09:57:04.535  INFO 17012 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 314 ms
+2024-06-11 09:57:04.552  INFO 17012 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2024-06-11 09:57:04.557  INFO 17012 --- [cluster-rtt-ClusterId{value='66680350ae1aac153edd79df', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:85}] to localhost:27017
+2024-06-11 09:57:04.558  INFO 17012 --- [cluster-ClusterId{value='66680350ae1aac153edd79df', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:86}] to localhost:27017
+2024-06-11 09:57:04.558  INFO 17012 --- [cluster-ClusterId{value='66680350ae1aac153edd79df', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2812100}
+2024-06-11 09:57:04.575  INFO 17012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-11 09:57:04.706  INFO 17012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-11 09:57:04.710  INFO 17012 --- [restartedMain] c.e.u.UserRegistrationApplication        : Started UserRegistrationApplication in 0.521 seconds (JVM running for 57425.538)
+2024-06-11 09:57:04.712  INFO 17012 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
